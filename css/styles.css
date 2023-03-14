@@ -503,7 +503,7 @@ body {
   overflow-y: auto;
 }
 
-.work-item:hover .work-item-text-overlay {
+.work-item-link:hover .work-item-text-overlay {
   transform: translateY(0);
 }
 
@@ -628,14 +628,20 @@ body {
 
 .modal-close {
   background: #e7e9fc;
-  margin: 24px;
   display: block;
   margin-left: auto;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 24px;
   width: 24px;
-  position: relative;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 24px;
+  right: 24px;
+  padding: 0px;
+  cursor: pointer;
   transition-property: background, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -647,15 +653,16 @@ body {
   border: 1px solid var(--pressed-state);
 }
 
+.modal-close:hover .modal-close-icon,
+.modal-close:focus .modal-close-icon {
+  fill: var(--white);
+}
+
 .modal-close-icon {
-  fill: var(--subtle-text);
-  position: absolute;
-  top: 0;
-  left: 0;
+  fill: var(--dark);
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 8px;
 }
 
 .modal-close-icon:hover,
